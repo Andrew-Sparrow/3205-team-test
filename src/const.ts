@@ -4,6 +4,11 @@ export const AppRoute = {
 };
 
 export const APIRoute = {
-  ORDERS: '/orders',
+  CURRENCIES: '/orders',
   FAVORITE: 'favorite',
 };
+
+export const groupNames = {
+  CONVERTER: 'converter',
+  CURRENCY_LIST: 'currency_list',
+}
