@@ -411,11 +411,8 @@ img {
 }
 
 .header__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: flex-start;
   padding: 19px 16px 0;
   justify-content: center;
@@ -437,6 +434,7 @@ img {
   font-size: 58px;
   margin-top: 0;
   margin-bottom: 28px;
+  text-align: center;
 }
 
 .header__logo-link {

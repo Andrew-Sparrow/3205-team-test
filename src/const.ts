@@ -4,7 +4,7 @@ export const AppRoute = {
 };
 
 export const APIRoute = {
-  CURRENCIES: '/orders',
+  PAIR: '/pair',
   FAVORITE: 'favorite',
 };
 

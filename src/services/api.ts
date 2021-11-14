@@ -1,8 +1,7 @@
 import axios, {AxiosError} from 'axios';
 
-const BACKEND_URL = 'https://exchange-rates.abstractapi.com/v1/live';
+const BACKEND_URL = 'https://v6.exchangerate-api.com/v6/';
 const REQUEST_TIMEOUT = 5000;
-// const API_KEY = 'c232b0d79fdfea14ced81531';
 
 export const getAxiosInstance = () => {
   const axiosInstance = axios.create({

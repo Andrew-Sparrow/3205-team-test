@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import withLayout from '../hocs/with-layout';
 
 const Main: FC = () => {
   return (
@@ -6,4 +7,5 @@ const Main: FC = () => {
   );
 };
 
-export default Main;
+const withLayoutMain = withLayout(Main);
+export default withLayoutMain;
