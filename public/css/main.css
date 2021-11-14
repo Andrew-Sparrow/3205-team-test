@@ -274,6 +274,7 @@ img {
 
 .container {
   min-width: 320px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -432,8 +433,8 @@ img {
 
 .header__title {
   font-size: 58px;
-  margin-top: 0;
-  margin-bottom: 28px;
+  margin-top: 50px;
+  margin-bottom: 60px;
   text-align: center;
 }
 
