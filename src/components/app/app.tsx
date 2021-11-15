@@ -6,9 +6,7 @@ import CurrencyList from '../currency-list/currency-list';
 import Main from '../main/main';
 
 
-
 function App() {
-
 
   return (
     <BrowserRouter history={browserHistory}>
