@@ -13,7 +13,12 @@ export const APIRoute = {
   LATEST: '/latest/',
 };
 
-export const groupNames = {
-  CONVERTER: 'converter',
-  CURRENCY_LIST: 'currency_list',
-}
+export const tabActiveNames = {
+  CONVERTER: 'Currency Converter',
+  CURRENCY_LIST: 'List of Exchange Rates',
+};
+
+export const tabList = [
+  'Currency Converter',
+  'List of Exchange Rates'
+];

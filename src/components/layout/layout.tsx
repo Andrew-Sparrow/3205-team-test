@@ -2,6 +2,9 @@ import {FC} from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
+// import CenteredTabs from '../tabs/tabs';
+import Tabs from '../tabs/tabs';
+import {tabActiveNames} from '../../const';
 
 interface LayoutProps {
   className?: string;
@@ -18,10 +21,7 @@ const Layout: FC<LayoutProps> = (props) => {
       <header className="header">
         <div className="container">
           <h2 className="header__title">Currency Converter</h2>
-          <Stack spacing={2} direction="row" justifyContent="space-between" mb={5}>
-            <Button variant="contained" size="large">Currency Converter</Button>
-            <Button variant="contained" size="large">List of Exchange Rates</Button>
-          </Stack>
+          <Tabs />
         </div>
       </header>
       <Divider />

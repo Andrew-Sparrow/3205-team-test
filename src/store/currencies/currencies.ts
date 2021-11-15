@@ -8,7 +8,7 @@ import {
   IShowErrorMessage
 } from '../../types/types';
 
-import {groupNames} from '../../const';
+import {tabActiveNames} from '../../const';
 
 import {
   changeTab,
@@ -20,7 +20,7 @@ import {
 const initialState: ICurrenciesState = {
   currencies: [],
   isCurrencyLoaded: false,
-  activeTabName: groupNames.CONVERTER,
+  activeTabName: tabActiveNames.CONVERTER,
   isShowErrorMessage: false,
   errorMessage: '',
 };
