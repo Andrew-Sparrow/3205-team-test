@@ -12,9 +12,10 @@ export interface ICurrency {
 
 export interface ICurrenciesState {
   currencies: ICurrency[],
-  isCurrenciesLoading: boolean,
   activeTabName: string,
-  isCurrencySuccessfullyLoaded: boolean
+  isCurrencyLoaded: boolean,
+  isShowErrorMessage: boolean,
+  errorMessage: string,
 };
 
 export interface IChangeTabAction {
@@ -27,7 +28,15 @@ export interface ILoadCurrenciesAction {
   payload: ICurrency[];
 }
 
-export interface IIsOrdersLoadedStatus {
+export interface IIsCurrenciesLoadedStatus {
   type: string;
   payload: boolean;
+};
+
+export interface IShowErrorMessage {
+  type: string;
+  payload: {
+    isShowErrorMessage: boolean;
+    errorMessageText: string;
+  };
 };

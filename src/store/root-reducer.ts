@@ -1,14 +1,13 @@
 import {combineReducers} from 'redux';
-import {ordersReducer} from './currencies/currencies';
+import {currenciesReducer} from './currencies/currencies';
 
 
 export const NameSpace = {
-  ORDERS: 'ORDERS',
-  FORM: 'FORM',
+  CURRENCIES: 'CURRENCIES',
 };
 
 const rootReducer = combineReducers({
-  [NameSpace.ORDERS]: ordersReducer,
+  [NameSpace.CURRENCIES]: currenciesReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

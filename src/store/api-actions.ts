@@ -1,7 +1,7 @@
 import {
-  changeIsLoadingStatus,
-  loadCurrenciesAction,
-  showErrorFormMessage,
+  changeIsLoadedStatus,
+  loadPairCurrenciesAction,
+  showErrorMessage,
 } from './actions';
 
 import {AxiosError, AxiosInstance} from 'axios';
@@ -10,16 +10,17 @@ import {APIRoute} from '../const';
 
 const API_KEY = 'c232b0d79fdfea14ced81531';
 
-// export const fetchCurrencyList = (changeFrom, changeTo) => (dispatch: AppDispatch, _getState: any, api: AxiosInstance) => (
-export const fetchCurrencyList = () => (dispatch: AppDispatch, _getState: any, api: AxiosInstance) => (
-  api.get(`/${API_KEY}/` + APIRoute.PAIR + '/EUR/GBP')
+export const fetchCurrencyList = (rateFrom: string) => (dispatch: AppDispatch, _getState: any, api: AxiosInstance) => (
+// export const fetchCurrencyList = () => (dispatch: AppDispatch, _getState: any, api: AxiosInstance) => (
+  // api.get(`/${API_KEY}` + APIRoute.PAIR + `${changeFrom}/${changeTo}`)
+  api.get(`/${API_KEY}` + APIRoute.LATEST + `${rateFrom}`)
     .then(({data}: any) => {
       setTimeout(() => {
-        dispatch(loadCurrenciesAction(data));
+        dispatch(loadPairCurrenciesAction(data));
       }, 500);
     })
     .catch((err: AxiosError | Error) => {
-      dispatch(changeIsLoadingStatus(false));
-      dispatch(showErrorFormMessage(true, err.message));
+      dispatch(changeIsLoadedStatus(false));
+      dispatch(showErrorMessage(true, err.message));
     })
 );

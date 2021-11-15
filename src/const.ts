@@ -3,9 +3,14 @@ export const AppRoute = {
   CURRENCY_LIST: '/list',
 };
 
+export const сurrencyCodes = {
+  USD: 'USD',
+  RUB: 'RUB'
+};
+
 export const APIRoute = {
-  PAIR: '/pair',
-  FAVORITE: 'favorite',
+  PAIR: '/pair/',
+  LATEST: '/latest/',
 };
 
 export const groupNames = {

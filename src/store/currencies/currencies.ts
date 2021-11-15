@@ -2,24 +2,27 @@ import {createReducer} from '@reduxjs/toolkit';
 
 import {
   IChangeTabAction,
-  IIsOrdersLoadedStatus,
+  IIsCurrenciesLoadedStatus,
   ICurrenciesState,
-  ILoadCurrenciesAction
+  ILoadCurrenciesAction,
+  IShowErrorMessage
 } from '../../types/types';
 
 import {groupNames} from '../../const';
 
 import {
   changeTab,
-  loadCurrenciesAction,
-  changeIsLoadingStatus
+  loadPairCurrenciesAction,
+  changeIsLoadedStatus,
+  showErrorMessage
 } from '../actions';
 
 const initialState: ICurrenciesState = {
   currencies: [],
-  isCurrenciesLoading: false,
-  isCurrencySuccessfullyLoaded: false,
-  activeTabName: groupNames.CONVERTER
+  isCurrencyLoaded: false,
+  activeTabName: groupNames.CONVERTER,
+  isShowErrorMessage: false,
+  errorMessage: '',
 };
 
 const currenciesReducer = createReducer(initialState, (builder) => {
@@ -27,16 +30,20 @@ const currenciesReducer = createReducer(initialState, (builder) => {
     .addCase(changeTab, (state: ICurrenciesState, action: IChangeTabAction) => {
       state.activeTabName = action.payload;
     })
-    .addCase(loadCurrenciesAction, (state: ICurrenciesState, action: ILoadCurrenciesAction) => {
+    .addCase(loadPairCurrenciesAction, (state: ICurrenciesState, action: ILoadCurrenciesAction) => {
       state.currencies = action.payload;
-      state.isCurrenciesLoading = true;
+      state.isCurrencyLoaded = true;
     })
-    .addCase(changeIsLoadingStatus, (state: ICurrenciesState, action: IIsOrdersLoadedStatus) => {
-      state.isCurrencySuccessfullyLoaded = action.payload;
+    .addCase(changeIsLoadedStatus, (state: ICurrenciesState, action: IIsCurrenciesLoadedStatus) => {
+      state.isCurrencyLoaded = action.payload;
+    })
+    .addCase(showErrorMessage, (state: ICurrenciesState, action: IShowErrorMessage) => {
+      state.isShowErrorMessage = action.payload.isShowErrorMessage;
+      state.errorMessage = action.payload.errorMessageText;
     })
     .addDefaultCase((state) => {
       return state;
     })
 });
 
-export {currenciesReducer as ordersReducer};
+export {currenciesReducer};

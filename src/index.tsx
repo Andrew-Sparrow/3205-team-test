@@ -8,6 +8,7 @@ import App from './components/app/app';
 import {rootReducer} from './store/root-reducer';
 import {fetchCurrencyList} from './store/api-actions';
 import {redirect} from './store/middlewares/redirect';
+import {сurrencyCodes} from './const';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -35,7 +36,7 @@ const store = setupStore();
 
 export type RootState = ReturnType<typeof store.getState>
 
-store.dispatch(fetchCurrencyList());
+store.dispatch(fetchCurrencyList(сurrencyCodes.USD));
 
 ReactDOM.render(
   <Provider store={store}>

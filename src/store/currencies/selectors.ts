@@ -1,5 +1,5 @@
 import {NameSpace} from '../root-reducer';
 
-export const getOrders = (state: any) => state[NameSpace.ORDERS].orders;
-export const getIsOrdersLoaded = (state: any) => state[NameSpace.ORDERS].isOrdersLoaded;
-export const getActiveTabName = (state: any) => state[NameSpace.ORDERS].activeTabName;
+export const getCurrencies = (state: any) => state[NameSpace.CURRENCIES].orders;
+export const getIsCurrencyLoaded = (state: any) => state[NameSpace.CURRENCIES].isCurrencyLoaded;
+export const getActiveTabName = (state: any) => state[NameSpace.CURRENCIES].activeTabName;
