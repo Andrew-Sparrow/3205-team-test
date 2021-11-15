@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 
 interface LayoutProps {
-  className: string;
+  className?: string;
 }
 
 const Layout: FC<LayoutProps> = (props) => {

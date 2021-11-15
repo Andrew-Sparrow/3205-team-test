@@ -10,10 +10,14 @@ const Main: FC = () => {
       <Stack spacing={2} direction="row" justifyContent="space-between" mt={5}>
         <TextField
           id="outlined-read-only-input"
-          label="Enter Currency Amount By Template"
+          label="Enter Currency Amount"
           defaultValue="15 usd in rub"
         />
-        <Button variant="contained" size="large">Calculate</Button>
+        <Button
+          variant="contained"
+          size="large"
+          color="success"
+        >Calculate</Button>
       </Stack>
     </div>
   );
