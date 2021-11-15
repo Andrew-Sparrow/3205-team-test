@@ -29,6 +29,7 @@ function Tabs() {
 
   const location = useLocation();
 
+  // this was made to synchronize tabs state with browser history tabs
   useEffect(() => {
     switch (location.pathname) {
       case '/':

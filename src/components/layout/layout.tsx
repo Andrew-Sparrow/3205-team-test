@@ -1,10 +1,6 @@
 import {FC} from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-// import CenteredTabs from '../tabs/tabs';
 import Tabs from '../tabs/tabs';
-import {activeTabNames} from '../../const';
 
 interface LayoutProps {
   className?: string;
