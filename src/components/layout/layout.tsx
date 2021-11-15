@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 // import CenteredTabs from '../tabs/tabs';
 import Tabs from '../tabs/tabs';
-import {tabActiveNames} from '../../const';
+import {activeTabNames} from '../../const';
 
 interface LayoutProps {
   className?: string;

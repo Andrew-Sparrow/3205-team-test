@@ -2,7 +2,7 @@ import {FC} from 'react';
 
 const CurrencyList: FC = () => {
   return (
-    <p></p>
+    <p>wwwwwwww</p>
   );
 };
 
