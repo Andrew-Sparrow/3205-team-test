@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {useTheme} from '@mui/material/styles';
+import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -101,6 +102,16 @@ const rows = [
   createData('Oreo', 437, 18.0),
 ].sort((a, b) => (a.calories < b.calories ? -1 : 1));
 
+const StyledTableRow = styled(TableRow)(({theme}) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
+
 export default function PaginationTable() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -131,7 +142,7 @@ export default function PaginationTable() {
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : rows
           ).map((row) => (
-            <TableRow key={row.name}>
+            <StyledTableRow key={row.name}>
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
@@ -141,7 +152,7 @@ export default function PaginationTable() {
               <TableCell style={{width: 160}} align="right">
                 {row.fat}
               </TableCell>
-            </TableRow>
+            </StyledTableRow>
           ))}
           {emptyRows > 0 && (
             <TableRow style={{height: 53 * emptyRows}}>
