@@ -5,6 +5,7 @@ import {useLocation} from 'react-router-dom';
 import {activeTabNames} from '../../const';
 import {changeTab} from '../../store/actions';
 import {AppRoute} from '../../const';
+import PaginationTable from '../pagination-table/pagination-table';
 
 
 const CurrencyList: FC = () => {
@@ -24,7 +25,7 @@ const CurrencyList: FC = () => {
   }, [location, dispatch]);
 
   return (
-    <p>wwwwwwww</p>
+    <PaginationTable />
   );
 };
 
