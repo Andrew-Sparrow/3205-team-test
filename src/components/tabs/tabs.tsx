@@ -5,7 +5,7 @@ import {BrowserRouter, useLocation} from 'react-router-dom';
 
 import {changeTab} from '../../store/actions';
 import {getActiveTabName} from '../../store/currencies/selectors';
-import {useTypedSelector} from '../../hooks/useTypedSelector';
+import {useTypedSelector} from '../../hooks/use-typed-selector';
 import Button from '@mui/material/Button';
 import {activeTabNames, AppRoute} from '../../const';
 import {redirectToRoute} from '../../store/actions';

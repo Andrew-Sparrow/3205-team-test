@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import LoadingScreen from '../loading-screen/loading-screen';
-import {useTypedSelector} from '../../hooks/useTypedSelector';
+import {useTypedSelector} from '../../hooks/use-typed-selector';
 import {getIsCurrencyLoaded} from '../../store/currencies/selectors';
 
 const Main: FC = () => {

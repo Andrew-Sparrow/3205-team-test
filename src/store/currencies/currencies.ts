@@ -9,7 +9,10 @@ import {
   IBaseCurrencyChangingAction
 } from '../../types/types';
 
-import {activeTabNames} from '../../const';
+import {
+  activeTabNames,
+  currencyCodes
+} from '../../const';
 
 import {
   changeTab,
@@ -25,7 +28,7 @@ const initialState: ICurrenciesState = {
   activeTabName: activeTabNames.CONVERTER,
   isShowErrorMessage: false,
   errorMessage: '',
-  baseCurrency: ''
+  baseCurrency: currencyCodes.USD
 };
 
 const currenciesReducer = createReducer(initialState, (builder) => {

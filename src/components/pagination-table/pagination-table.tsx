@@ -17,7 +17,7 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 
-import {useTypedSelector} from '../../hooks/useTypedSelector';
+import {useTypedSelector} from '../../hooks/use-typed-selector';
 import {getCurrencies} from '../../store/currencies/selectors';
 import {getIsCurrencyLoaded} from '../../store/currencies/selectors';
 import LoadingScreen from '../loading-screen/loading-screen';
