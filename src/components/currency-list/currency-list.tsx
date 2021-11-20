@@ -6,14 +6,15 @@ import {activeTabNames} from '../../const';
 import {changeTab} from '../../store/actions';
 import {AppRoute} from '../../const';
 import PaginationTable from '../pagination-table/pagination-table';
+import useBaseCurrency from '../../hooks/use-base-currency';
 
 import Typography from '@mui/material/Typography';
-
 
 
 const CurrencyList: FC = () => {
   const location = useLocation();
   const dispatch = useDispatch();
+  const baseCurrency = useBaseCurrency();
 
   // this was made to synchronize tabs state with browser history tabs
   useEffect(() => {
@@ -36,7 +37,7 @@ const CurrencyList: FC = () => {
           component="div"
           sx={{my: '50px'}}
         >
-          Base currency: {'asdfasd'}
+          Base currency: {baseCurrency}
         </Typography>
       </div>
       <PaginationTable />
