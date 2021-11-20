@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import {useTheme} from '@mui/material/styles';
 import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -15,6 +16,7 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
+
 import {useTypedSelector} from '../../hooks/useTypedSelector';
 import {getCurrencies} from '../../store/currencies/selectors';
 import {getIsCurrencyLoaded} from '../../store/currencies/selectors';
@@ -93,7 +95,6 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
 
 function createArrayFromObject(obj: any) {
   const newArr: Array<ICurrency> = [];
-  console.log(obj);
   let keys = Object.keys(obj);
 
   keys.forEach((key) => newArr.push({code: key, rate: obj[key]}));
@@ -120,8 +121,8 @@ export default function PaginationTable() {
   if (!isCurrenciesLoaded) {
     return (
       <LoadingScreen />
-      );
-    }
+    );
+  }
 
   const rows = createArrayFromObject(currencies.conversion_rates);
 
@@ -145,7 +146,7 @@ export default function PaginationTable() {
 
   return (
     <TableContainer component={Paper} sx={{my: '50px', mx: 'auto', width: '500px'}}>
-      <Table  aria-label="custom pagination table">
+      <Table aria-label="custom pagination table">
         <TableBody>
           {(rowsPerPage > 0
             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)

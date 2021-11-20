@@ -1,4 +1,4 @@
-import {FC, useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import withLayout from '../hocs/with-layout';
 import {useDispatch} from 'react-redux';
 import {useLocation} from 'react-router-dom';
@@ -6,6 +6,9 @@ import {activeTabNames} from '../../const';
 import {changeTab} from '../../store/actions';
 import {AppRoute} from '../../const';
 import PaginationTable from '../pagination-table/pagination-table';
+
+import Typography from '@mui/material/Typography';
+
 
 
 const CurrencyList: FC = () => {
@@ -25,7 +28,19 @@ const CurrencyList: FC = () => {
   }, [location, dispatch]);
 
   return (
-    <PaginationTable />
+    <React.Fragment>
+      <div className="container">
+        <Typography
+          variant="h6"
+          gutterBottom
+          component="div"
+          sx={{my: '50px'}}
+        >
+          Base currency = {'asdfasd'}
+        </Typography>
+      </div>
+      <PaginationTable />
+    </React.Fragment>
   );
 };
 
