@@ -16,9 +16,15 @@ export interface ICurrenciesState {
   isCurrencyLoaded: boolean,
   isShowErrorMessage: boolean,
   errorMessage: string,
+  baseCurrency: string
 };
 
 export interface IChangeTabAction {
+  type: string;
+  payload: string;
+}
+
+export interface IBaseCurrencyChangingAction {
   type: string;
   payload: string;
 }

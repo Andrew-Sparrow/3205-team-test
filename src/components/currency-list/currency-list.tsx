@@ -36,7 +36,7 @@ const CurrencyList: FC = () => {
           component="div"
           sx={{my: '50px'}}
         >
-          Base currency = {'asdfasd'}
+          Base currency: {'asdfasd'}
         </Typography>
       </div>
       <PaginationTable />

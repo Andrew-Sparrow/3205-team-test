@@ -5,7 +5,8 @@ import {
   IIsCurrenciesLoadedStatus,
   ICurrenciesState,
   ILoadCurrenciesAction,
-  IShowErrorMessage
+  IShowErrorMessage,
+  IBaseCurrencyChangingAction
 } from '../../types/types';
 
 import {activeTabNames} from '../../const';
@@ -14,7 +15,8 @@ import {
   changeTab,
   loadAllCurrenciesAction,
   changeIsLoadedStatus,
-  showErrorMessage
+  showErrorMessage,
+  baseCurrencyChanging
 } from '../actions';
 
 const initialState: ICurrenciesState = {
@@ -23,6 +25,7 @@ const initialState: ICurrenciesState = {
   activeTabName: activeTabNames.CONVERTER,
   isShowErrorMessage: false,
   errorMessage: '',
+  baseCurrency: ''
 };
 
 const currenciesReducer = createReducer(initialState, (builder) => {
@@ -40,6 +43,9 @@ const currenciesReducer = createReducer(initialState, (builder) => {
     .addCase(showErrorMessage, (state: ICurrenciesState, action: IShowErrorMessage) => {
       state.isShowErrorMessage = action.payload.isShowErrorMessage;
       state.errorMessage = action.payload.errorMessageText;
+    })
+    .addCase(baseCurrencyChanging, (state: ICurrenciesState, action: IBaseCurrencyChangingAction) => {
+      state.baseCurrency = action.payload;
     })
     .addDefaultCase((state) => {
       return state;
