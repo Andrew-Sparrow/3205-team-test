@@ -3,18 +3,8 @@ import withLayout from '../hocs/with-layout';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import LoadingScreen from '../loading-screen/loading-screen';
-import {useTypedSelector} from '../../hooks/use-typed-selector';
-import {getIsCurrencyLoaded} from '../../store/currencies/selectors';
 
 const Main: FC = () => {
-  const isCurrenciesLoaded = useTypedSelector(getIsCurrencyLoaded);
-
-  if (!isCurrenciesLoaded) {
-    return (
-      <LoadingScreen />
-    );
-  }
 
   return (
     <div className="container">
