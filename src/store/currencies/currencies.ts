@@ -12,7 +12,7 @@ import {activeTabNames} from '../../const';
 
 import {
   changeTab,
-  loadPairCurrenciesAction,
+  loadAllCurrenciesAction,
   changeIsLoadedStatus,
   showErrorMessage
 } from '../actions';
@@ -30,7 +30,7 @@ const currenciesReducer = createReducer(initialState, (builder) => {
     .addCase(changeTab, (state: ICurrenciesState, action: IChangeTabAction) => {
       state.activeTabName = action.payload;
     })
-    .addCase(loadPairCurrenciesAction, (state: ICurrenciesState, action: ILoadCurrenciesAction) => {
+    .addCase(loadAllCurrenciesAction, (state: ICurrenciesState, action: ILoadCurrenciesAction) => {
       state.currencies = action.payload;
       state.isCurrencyLoaded = true;
     })

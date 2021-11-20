@@ -3,7 +3,7 @@ export const AppRoute = {
   CURRENCY_LIST: '/list',
 };
 
-export const сurrencyCodes = {
+export const currencyCodes = {
   USD: 'USD',
   RUB: 'RUB'
 };

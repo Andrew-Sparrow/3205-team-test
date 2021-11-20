@@ -1,6 +1,6 @@
 import {
   changeIsLoadedStatus,
-  loadPairCurrenciesAction,
+  loadAllCurrenciesAction,
   showErrorMessage,
 } from './actions';
 
@@ -16,7 +16,8 @@ export const fetchCurrencyList = (rateFrom: string) => (dispatch: AppDispatch, _
   api.get(`/${API_KEY}` + APIRoute.LATEST + `${rateFrom}`)
     .then(({data}: any) => {
       setTimeout(() => {
-        dispatch(loadPairCurrenciesAction(data));
+        console.log(data);
+        dispatch(loadAllCurrenciesAction(data));
       }, 500);
     })
     .catch((err: AxiosError | Error) => {
