@@ -72,7 +72,7 @@ const Main: FC = () => {
         Your Result:
       </Typography>
       <Typography variant="h4" gutterBottom sx={{minHeight: '80px'}}>
-        {calculatedResult}
+        {calculatedResult} {convertCurrencyTo}
       </Typography>
       <Button
         variant="contained"
