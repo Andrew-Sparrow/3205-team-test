@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import countriesCodes from './country-codes';
+import countryCodes from './country-codes';
 
 // the function from https://mui.com/components/autocomplete/#country-select
 function CountrySelect() {
@@ -9,7 +9,7 @@ function CountrySelect() {
     <Autocomplete
       id="country-select-demo"
       sx={{width: 300}}
-      options={countriesCodes}
+      options={countryCodes}
       autoHighlight
       getOptionLabel={(option) => option.label}
       renderOption={(props, option) => (

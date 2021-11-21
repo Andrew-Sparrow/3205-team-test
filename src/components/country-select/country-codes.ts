@@ -7,7 +7,7 @@ interface CountryType {
 }
 
 // From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
-const countriesCodes: readonly CountryType[] = [
+const countryCodes: readonly CountryType[] = [
   {code: 'AD', label: 'Andorra', phone: '376'},
   {
     code: 'AE',
@@ -432,4 +432,4 @@ const countriesCodes: readonly CountryType[] = [
   {code: 'ZW', label: 'Zimbabwe', phone: '263'},
 ];
 
-export default countriesCodes;
+export default countryCodes;
