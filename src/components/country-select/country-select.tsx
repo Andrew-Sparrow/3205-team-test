@@ -27,7 +27,6 @@ function CountrySelect() {
 
   return (
     <div>
-      {/* <div>{`value: ${value !== null ? `'${value}'` : 'null'}`}</div> */}
       <Autocomplete
         id="country-select-demo"
         sx={{width: 300}}
@@ -35,7 +34,6 @@ function CountrySelect() {
         autoHighlight
         getOptionLabel={(option) => option.label}
         onChange={(evt, value) => {
-          console.log(value);
           try {
             if (value !== null) {
               const baseCurrency = isoCountryCurrency.getAllInfoByISO(value.code).currency;

@@ -3,8 +3,12 @@ import withLayout from '../hocs/with-layout';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
+import useBaseCurrency from '../../hooks/use-base-currency';
 
 const Main: FC = () => {
+  const baseCurrency = useBaseCurrency();
 
   return (
     <div className="container">
@@ -12,21 +16,28 @@ const Main: FC = () => {
         spacing={2}
         direction="row"
         justifyContent="space-between"
-        mt={5}
+        my={5}
       >
         <TextField
-          id="outlined-read-only-input"
-          label="Enter Currency Amount"
-          defaultValue="15 usd in rub"
+          id="outlined-number"
+          label="Currency Amount"
+          type="number"
+          InputLabelProps={{
+            shrink: true,
+          }}
         />
-        <Button
-          variant="contained"
-          size="large"
-          color="success"
-        >
-          Calculate
-        </Button>
+      <Typography variant="button" display="block" gutterBottom>
+          from {baseCurrency} to
+      </Typography>
       </Stack>
+      <Button
+        variant="contained"
+        size="large"
+        color="success"
+        sx={{width: 1}}
+      >
+        Calculate
+      </Button>
     </div>
   );
 };

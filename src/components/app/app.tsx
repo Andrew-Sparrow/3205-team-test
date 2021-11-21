@@ -19,7 +19,6 @@ import {baseCurrencyChanging} from '../../store/actions';
 function App() {
   const dispatch = useDispatch();
   const language = Util.getLanguage();
-  console.log(language);
   const baseCurrency = isoCountryCurrency.getAllInfoByISO(language).currency;
 
   dispatch(baseCurrencyChanging(baseCurrency));
