@@ -44,6 +44,7 @@ const currenciesReducer = createReducer(initialState, (builder) => {
       state.isCurrencyLoaded = action.payload;
     })
     .addCase(showErrorMessage, (state: ICurrenciesState, action: IShowErrorMessage) => {
+      state.isCurrencyLoaded = false;
       state.isShowErrorMessage = action.payload.isShowErrorMessage;
       state.errorMessage = action.payload.errorMessageText;
     })

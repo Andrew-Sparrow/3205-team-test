@@ -5,9 +5,9 @@ export const ActionType = {
   LOAD_CURRENCIES_PAIR: 'currencies/loadCurrenciesPair',
   LOAD_CURRENCIES_ALL: 'currencies/loadCurrenciesAll',
   IS_CURRENCIES_LOADED: 'currencies/isCurrenciesLoadedOrder',
-  BASE_CURRENCY_CHANGING: 'currencies/redirectToRoute',
+  BASE_CURRENCY_CHANGING: 'currencies/BaseCurrencyChanging',
   SHOW_ERROR_MESSAGE: 'currencies/showErrorMessage',
-  REDIRECT_TO_ROUTE: 'currencies/redirectToRoute',
+  REDIRECT_TO_ROUTE: 'currencies/redirectToRoute'
 };
 
 
@@ -43,5 +43,8 @@ export const showErrorMessage = createAction(
 
 export const redirectToRoute = createAction(
   ActionType.REDIRECT_TO_ROUTE,
-  (url) => ({payload: url})
+  (url) => {
+    console.log(url);
+    return {payload: url}
+  }
 );

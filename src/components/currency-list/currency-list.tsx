@@ -2,6 +2,7 @@ import React, {FC, useEffect} from 'react';
 import withLayout from '../hocs/with-layout';
 import {useDispatch} from 'react-redux';
 import {useLocation} from 'react-router-dom';
+
 import {activeTabNames} from '../../const';
 import {changeTab} from '../../store/actions';
 import {AppRoute} from '../../const';
@@ -15,6 +16,7 @@ const CurrencyList: FC = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const baseCurrency = useBaseCurrency();
+  console.log(baseCurrency);
 
   // this was made to synchronize tabs state with browser history tabs
   useEffect(() => {
@@ -26,7 +28,7 @@ const CurrencyList: FC = () => {
         dispatch(changeTab(activeTabNames.CURRENCY_LIST));
         break;
     }
-  }, [location, dispatch]);
+  });
 
   return (
     <React.Fragment>
