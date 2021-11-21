@@ -9,11 +9,16 @@ import isoCountryCurrency from 'iso-country-currency';
 
 import useBaseCurrency from '../../hooks/use-base-currency';
 import CountrySelectCalculate from '../country-select-calculate/country-select-calculate';
+import {useTypedSelector} from '../../hooks/use-typed-selector';
+import {getCurrencies} from '../../store/currencies/selectors';
+
 
 const Main: FC = () => {
   const baseCurrency = useBaseCurrency();
   const [convertCurrencyTo, setConvertCurrencyTo] = useState('');
   const [calculatedResult, setCalculatedResult] = useState(0);
+  const [inputValue, setInputValue] = useState(0);
+  const currencies = useTypedSelector(getCurrencies);
 
   function changeCurrencyCalculateTo(evt: any, value: any): void {
     try {
@@ -25,6 +30,14 @@ const Main: FC = () => {
       setConvertCurrencyTo('USD');
     }
   }
+
+  function calculateCurrencyChanging() {
+    const currencyRates = currencies.conversion_rates;
+    const currencyRate = currencyRates[convertCurrencyTo];
+
+    const result = inputValue * currencyRate;
+    setCalculatedResult(result);
+  };
 
   return (
     <div className="container">
@@ -38,6 +51,10 @@ const Main: FC = () => {
           id="outlined-number"
           label="Currency Amount"
           type="number"
+          value={inputValue}
+          onChange={(evt: any) => {
+            setInputValue(evt.target.value);
+          }}
           sx={{minWidth: '100px'}}
           InputLabelProps={{
             shrink: true,
@@ -63,7 +80,7 @@ const Main: FC = () => {
         color="success"
         sx={{width: 1}}
         onClick={(evt) => {
-          console.log('evt');
+          calculateCurrencyChanging();
         }}
       >
         Calculate
