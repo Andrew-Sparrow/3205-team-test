@@ -11,6 +11,12 @@ const Util = {
     const list = new Array(listLength).fill('');
     const generatedIdList = list.map(() => nanoid(10));
     return generatedIdList;
+  },
+
+   getLanguage() {
+    if (navigator.languages !== undefined)
+      return navigator.languages[0].split('-')[1];
+    return navigator.language;
   }
 }
 
