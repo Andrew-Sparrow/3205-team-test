@@ -49,7 +49,7 @@ function Tabs() {
 
   return (
     <div className="tabs">
-      <section className="locations container">
+      <section className="locations">
         <Stack spacing={2} direction="row" justifyContent="space-between" mb={5}>
           <BrowserRouter forceRefresh={true}>
             {Object.values(activeTabNames).map((tabName) => (

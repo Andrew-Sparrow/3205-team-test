@@ -38,6 +38,7 @@ const Main: FC = () => {
           id="outlined-number"
           label="Currency Amount"
           type="number"
+          sx={{minWidth: '100px'}}
           InputLabelProps={{
             shrink: true,
           }}
@@ -61,6 +62,9 @@ const Main: FC = () => {
         size="large"
         color="success"
         sx={{width: 1}}
+        onClick={(evt) => {
+          console.log('evt');
+        }}
       >
         Calculate
       </Button>
