@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import countriesCodes from './country-codes';
 
+// the function from https://mui.com/components/autocomplete/#country-select
 function CountrySelect() {
   return (
     <Autocomplete
