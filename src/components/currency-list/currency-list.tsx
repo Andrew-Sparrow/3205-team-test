@@ -1,4 +1,4 @@
-import React, {FC, useEffect} from 'react';
+import {FC, useEffect} from 'react';
 import withLayout from '../hocs/with-layout';
 import {useDispatch} from 'react-redux';
 import {useLocation} from 'react-router-dom';
