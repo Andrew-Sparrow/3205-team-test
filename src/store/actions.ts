@@ -43,8 +43,5 @@ export const showErrorMessage = createAction(
 
 export const redirectToRoute = createAction(
   ActionType.REDIRECT_TO_ROUTE,
-  (url) => {
-    console.log(url);
-    return {payload: url}
-  }
+  (url) => ({payload: url})
 );

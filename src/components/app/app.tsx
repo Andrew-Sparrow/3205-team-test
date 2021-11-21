@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCurrencyList(baseCurrency));
-  }, []);
+  });
 
   if (!isCurrenciesLoaded) {
     return (

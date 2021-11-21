@@ -14,7 +14,6 @@ export const fetchCurrencyList = (baseCurrency: string) => (dispatch: AppDispatc
   api.get(`/${API_KEY}` + APIRoute.LATEST + `${baseCurrency}`)
     .then(({data}: any) => {
       setTimeout(() => {
-        console.log(baseCurrency);
         dispatch(loadAllCurrenciesAction(data));
       }, 500);
     })

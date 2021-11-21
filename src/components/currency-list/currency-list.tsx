@@ -16,7 +16,6 @@ const CurrencyList: FC = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const baseCurrency = useBaseCurrency();
-  console.log(baseCurrency);
 
   // this was made to synchronize tabs state with browser history tabs
   useEffect(() => {
