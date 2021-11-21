@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 
 import useBaseCurrency from '../../hooks/use-base-currency';
 import Tabs from '../tabs/tabs';
+import CountrySelect from '../country-select/country-select';
 
 interface LayoutProps {
   className?: string;
@@ -23,6 +24,7 @@ const Layout: FC<LayoutProps> = (props) => {
         <div className="container">
           <h2 className="header__title">Currency Converter</h2>
           <Tabs />
+          <CountrySelect />
           <Typography
             variant="h6"
             gutterBottom
