@@ -6,7 +6,7 @@ import {useLocation} from 'react-router-dom';
 import {activeTabNames} from '../../const';
 import {changeTab} from '../../store/actions';
 import {AppRoute} from '../../const';
-import PaginationTable from '../pagination-table/pagination-table';
+import CurrencyTable from '../currency-table/currency-table';
 
 const CurrencyList: FC = () => {
   const location = useLocation();
@@ -29,7 +29,7 @@ const CurrencyList: FC = () => {
       <div className="container">
 
       </div>
-      <PaginationTable />
+      <CurrencyTable />
     </React.Fragment>
   );
 };

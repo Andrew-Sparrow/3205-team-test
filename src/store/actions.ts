@@ -5,7 +5,8 @@ export const ActionType = {
   LOAD_CURRENCIES_PAIR: 'currencies/loadCurrenciesPair',
   LOAD_CURRENCIES_ALL: 'currencies/loadCurrenciesAll',
   IS_CURRENCIES_LOADED: 'currencies/isCurrenciesLoadedOrder',
-  BASE_CURRENCY_CHANGING: 'currencies/BaseCurrencyChanging',
+  BASE_CURRENCY_CHANGING: 'currencies/baseCurrencyChanging',
+  LANGUAGE_DEFAULT_BROWSER: 'currencies/languageDefaultBrowser',
   SHOW_ERROR_MESSAGE: 'currencies/showErrorMessage',
   REDIRECT_TO_ROUTE: 'currencies/redirectToRoute'
 };
@@ -19,6 +20,11 @@ export const changeIsLoadedStatus = createAction(
 export const baseCurrencyChanging = createAction(
   ActionType.BASE_CURRENCY_CHANGING,
   (baseCurrency) => ({payload: baseCurrency}),
+);
+
+export const languageDefaultChanging = createAction(
+  ActionType.LANGUAGE_DEFAULT_BROWSER,
+  (defaultLanguage) => ({payload: defaultLanguage}),
 );
 
 export const changeTab = createAction(
