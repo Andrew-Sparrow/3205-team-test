@@ -25,12 +25,7 @@ const CurrencyList: FC = () => {
   });
 
   return (
-    <React.Fragment>
-      <div className="container">
-
-      </div>
-      <CurrencyTable />
-    </React.Fragment>
+    <CurrencyTable />
   );
 };
 
