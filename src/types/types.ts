@@ -19,7 +19,17 @@ export interface ICurrenciesState {
   baseCurrency: string
 };
 
+export interface ICountryState {
+  country: string,
+  language: string,
+};
+
 export interface IChangeTabAction {
+  type: string;
+  payload: string;
+}
+
+export interface IChangeCountryAction {
   type: string;
   payload: string;
 }

@@ -56,4 +56,4 @@ const currenciesReducer = createReducer(initialState, (builder) => {
     })
 });
 
-export {currenciesReducer};
+export default currenciesReducer;
