@@ -2,7 +2,7 @@
   "name": "32.05.team-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://andrew-sparrow.github.io/3205-team-test",
   "dependencies": {
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
