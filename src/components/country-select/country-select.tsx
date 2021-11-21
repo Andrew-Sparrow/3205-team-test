@@ -1,8 +1,9 @@
+import {useDispatch} from 'react-redux';
+import {useEffect} from 'react';
+
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-
-import {useDispatch} from 'react-redux';
 
 import isoCountryCurrency from 'iso-country-currency';
 
@@ -10,11 +11,19 @@ import {
   baseCurrencyChanging,
   countryChanging
 } from '../../store/actions';
+import {fetchCurrencyList} from '../../store/api-actions';
 import countryCodes from './country-codes';
+import useBaseCurrency from '../../hooks/use-base-currency';
 
 // the function from https://mui.com/components/autocomplete/#country-select
 function CountrySelect() {
   const dispatch = useDispatch();
+
+  const baseCurrency = useBaseCurrency();
+
+  useEffect(() => {
+    dispatch(fetchCurrencyList(baseCurrency));
+  });
 
   return (
     <div>
