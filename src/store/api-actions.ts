@@ -19,6 +19,8 @@ export const fetchCurrencyList = (baseCurrency: string) => (dispatch: AppDispatc
     })
     .catch((err: AxiosError | Error) => {
       dispatch(changeIsLoadedStatus(false));
-      dispatch(showErrorMessage(true, err.message));
+      setTimeout(() => {
+        dispatch(showErrorMessage(true, err.message));
+      }, 500);
     })
 );

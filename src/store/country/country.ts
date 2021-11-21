@@ -10,7 +10,7 @@ import {
 } from '../actions';
 
 const initialState: ICountryState = {
-  country: 'RUS',
+  country: 'RU',
   language: 'RU',
 };
 

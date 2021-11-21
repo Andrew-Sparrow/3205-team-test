@@ -30,7 +30,7 @@ export const countryChanging = createAction(
 
 export const languageDefaultChanging = createAction(
   ActionType.LANGUAGE_DEFAULT_BROWSER,
-  (defaultLanguage) => ({payload: defaultLanguage}),
+  (defaultLanguages) => ({payload: defaultLanguages}),
 );
 
 export const changeTab = createAction(
