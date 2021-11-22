@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {BrowserRouter, useLocation} from 'react-router-dom';
-// import browserHistory from '../../browser-history';
 
 import {changeTab} from '../../store/actions';
 import {getActiveTabName} from '../../store/currencies/selectors';
